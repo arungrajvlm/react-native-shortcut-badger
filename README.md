@@ -1,7 +1,8 @@
 # How to use it
 
 ## Add package react-native-shortcut-badger to react-native project
-# yarn add https://github.com/arungrajvlm/react-native-shortcut-badger.git
+
+yarn add https://github.com/arungrajvlm/react-native-shortcut-badger.git
 
 <img src="https://raw.githubusercontent.com/nguquen/react-native-shortcut-badger/master/screenshot.png" alt="screenshot" width="50%">
 
