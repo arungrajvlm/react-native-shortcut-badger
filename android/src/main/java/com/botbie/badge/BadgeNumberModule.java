@@ -43,6 +43,6 @@ public class BadgeNumberModule extends ReactContextBaseJavaModule {
             Log.e("Create", "showBadge failed: " + e.getMessage());
              return "showBadge failed: ";
         }
-         return "Badg Exc Finished";
+        // return "Badg Exc Finished";
     }
 }
