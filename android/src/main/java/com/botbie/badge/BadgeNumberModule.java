@@ -5,6 +5,7 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 
 import me.leolin.shortcutbadger.ShortcutBadger;
+import android.util.Log;
 
 /**
  * Created by dry on 9/23/16.
@@ -31,14 +32,17 @@ public class BadgeNumberModule extends ReactContextBaseJavaModule {
     
     
     @ReactMethod
-    public void setNumber(int number) {
+    public String setNumber(int number) {
        // ShortcutBadger.applyCount(this.getReactApplicationContext(), number);
-         try {
+          try {
             int badgeCount = 25;
-            ShortcutBadger.applyCountOrThrow(this.getApplicationContext(), badgeCount);
-            Log.d(TAG, "showBadge worked!");
-        } catch (ShortcutBadgeException e) {
-            Log.e(TAG, "showBadge failed: " + e.getMessage());
+            ShortcutBadger.applyCountOrThrow(this.getReactApplicationContext().getApplicationContext(), badgeCount);
+            Log.d("Create", "showBadge worked!");
+            return "showBadge worked!";
+        } catch (Exception e) {
+            Log.e("Create", "showBadge failed: " + e.getMessage());
+             return "showBadge failed: ";
         }
+         return "Badg Exc Finished";
     }
 }
