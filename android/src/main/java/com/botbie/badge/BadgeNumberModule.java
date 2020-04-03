@@ -32,6 +32,13 @@ public class BadgeNumberModule extends ReactContextBaseJavaModule {
     
     @ReactMethod
     public void setNumber(int number) {
-        ShortcutBadger.applyCount(this.getReactApplicationContext(), number);
+       // ShortcutBadger.applyCount(this.getReactApplicationContext(), number);
+         try {
+            int badgeCount = 25;
+            ShortcutBadger.applyCountOrThrow(this.getApplicationContext(), badgeCount);
+            Log.d(TAG, "showBadge worked!");
+        } catch (ShortcutBadgeException e) {
+            Log.e(TAG, "showBadge failed: " + e.getMessage());
+        }
     }
 }
